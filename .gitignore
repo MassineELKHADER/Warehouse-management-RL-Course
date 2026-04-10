@@ -1,0 +1,35 @@
+# Sensitive / project files
+.env
+*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.python-version
+
+# Outputs / checkpoints
+outputs/
+runs/
+checkpoints/
+*.pkl
+*.pt
+*.zip
+*.h5
+
+# WandB local cache
+wandb/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# AI tooling
+CLAUDE.md

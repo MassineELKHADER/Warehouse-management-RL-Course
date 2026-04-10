@@ -1,0 +1,28 @@
+# Base config -- all scenario yamls override these values
+
+env:
+  n_warehouses: 4
+  max_inventory: 500
+  demand_model: poisson       # poisson | gaussian | seasonal
+  demand_mean: 10.0
+  demand_std: 3.0             # used only for gaussian
+  lambda_penalty: 20.0        # weight on unmet demand
+  lambda_replenishment: 1.0   # weight on external supplier cost
+  gamma: 0.99
+  episode_length: 50
+
+  external_supplier:
+    enabled: False
+    cost_per_unit: 50.0       # much higher than max transport cost
+
+training:
+  n_episodes: 500
+  eval_every: 50
+  seeds: [42, 123, 7]
+
+# Cost matrix mode:
+#   null / "random" : symmetric random, Uniform(0.5, 2.0)
+#   "hub"           : hub-and-spoke with tiered costs
+#   list[list]      : explicit N x N matrix
+cost_matrix: "hub"
+hub_fraction: 0.2

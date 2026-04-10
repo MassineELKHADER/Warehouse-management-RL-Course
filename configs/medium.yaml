@@ -1,0 +1,7 @@
+_base_: default.yaml
+
+env:
+  n_warehouses: 9
+
+training:
+  n_episodes: 1000
